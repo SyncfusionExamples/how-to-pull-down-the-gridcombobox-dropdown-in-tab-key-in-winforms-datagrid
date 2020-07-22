@@ -2,7 +2,8 @@
 How to pull down the GridComboBox DropDown in Tab key in WinForms DataGrid(SfDataGrid)?
 
 By default, drop down of GridComboBoxColumn will open when double clicking the cell. But, you can open the drop down by press the Tab key using a custom renderer can be derived from GridComboBoxCellRenderer. In the custom renderer, the OnKeyUp method can be overridden to show the dropdown.
-```
+
+```C#
 public class GridComboBoxCellRendererExt : GridComboBoxCellRenderer
 {
     SfDataGrid dataGrid;
@@ -22,7 +23,7 @@ public class GridComboBoxCellRendererExt : GridComboBoxCellRenderer
     }
 }
 ```
-```
+```C#
 //To add custom ComboBox renderer to DataGrid
 this.sfDataGrid.CellRenderers.Remove("ComboBox");
 this.sfDataGrid.CellRenderers.Add("ComboBox", new GridComboBoxCellRendererExt(sfDataGrid));
